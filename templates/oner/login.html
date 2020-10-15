@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #006266">
+    <a href="" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+</nav>
+<div class="container mt-5">
+     <div class="row">
+         <div class="col-lg-5 mx-auto mt-4">
+             <div class="card border-0 shadow-sm">
+                 <div class="card-body">
+                     <h2 class="h6 text-muted"><i class="fas fa-sign-in-alt fa-xs text-info"></i> Owner Login</h2>
+                     <form action="{% url 'oner_login' %}" method="post" class="mt-3">
+                         {% csrf_token %}
+
+                         <div class="form-group">
+                             <label for="username" class="text-muted p-0 m-0 small">UserName</label>
+                             <input type="text" name="username" class="form-control form-control-sm shadow-none" placeholder="username">
+                         </div>
+
+                         <div class="form-group">
+                             <label for="password" class="text-muted small p-0 m-0">Password</label>
+                             <input type="password" name="password" class="form-control form-control-sm shadow-none" placeholder="Password">
+                         </div>
+
+                         <div class="form-group">
+                             <input type="submit" class="btn btn-info shadow-none btn-sm btn-block">
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+
+
+</body>
+</html>

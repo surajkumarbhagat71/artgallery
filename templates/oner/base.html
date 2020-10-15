@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Gallery </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #006266">
+    <a href="" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'oner_dashabord' %}" class="nav-link ml-5">Home</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'profile' %}" class="nav-link ml-5">profile</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'oner_logout' %}" class="btn btn-sm btn-danger ml-5">Logout</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-2">
+            {% block side %}
+                <div class="list-group">
+                    <a href="{% url 'oner_dashabord' %}" class="list-group list-group-item list-group-item-action text-center active">Dashabord</a>
+                    <a href="{% url 'profile' %}" class="list-group list-group-item list-group-item-action text-center">Profile</a>
+                    <a href="{% url 'all_painting' %}" class="list-group list-group-item list-group-item-action text-center">All Product</a>
+                    <a href="{% url 'all_order' %}" class="list-group list-group-item list-group-item-action text-center">All Order</a>
+                    <a href="{% url 'add_panting' %}" class="list-group list-group-item list-group-item-action text-center">Add Product</a>
+                </div>
+            {% endblock %}
+        </div>
+        <div class="col-lg-10">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

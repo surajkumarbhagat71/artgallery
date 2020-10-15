@@ -1,0 +1,31 @@
+{% extends 'oner/base.html' %}
+
+{% block sede %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-2">
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+          <div class="card border-0 shadow-sm">
+              <div class="card-header text-center text-white" style="background-color: #0f6674"><b>Add Painting</b></div>
+          <div class="card-body">
+              <form action="{% url 'add_panting' %}" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+
+                  <table class="table">
+                      {% load crispy_forms_tags %}
+                      {{ pform|crispy }}
+                  </table>
+
+                  <div class="form-group">
+                      <input type="submit" class="btn btn-primary btn-block">
+                  </div>
+              </form>
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>
+{% endblock %}

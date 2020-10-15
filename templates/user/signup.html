@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#006266">
+    <a href="{% url 'home' %}" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'home' %}" class="nav-link ml-5">Home</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="{% url 'about' %}" class="nav-link ml-3">About Us</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'p_product' %}" class="nav-link ml-3">product</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'signup' %}" class="nav-link ml-3">Register</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'user_login' %}" class="nav-link ml-3 mr-2">Login</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="" class="nav-link ml-3">Contact Us</a>
+        </li>
+
+    </ul>
+</nav>
+
+</nav>
+
+    <div class="container mt-3 ">
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+          <div class="card border-0 shadow-sm">
+              <div class="card-header text-center text-white" style="background-color:#686de0"><b>User Signup</b></div>
+          <div class="card-body border-0">
+              <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  
+                  <table class="table">
+                      {{ form }}
+                  </table>
+                  
+                  <div class="form-group">
+                      <input type="submit" value="Signup" class="btn btn-primary btn-outline-warning btn-block" style="background-color:#44bd32">
+                  </div>
+              </form>
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

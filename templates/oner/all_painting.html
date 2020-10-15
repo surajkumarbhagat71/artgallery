@@ -1,0 +1,45 @@
+{% extends 'oner/base.html' %}
+
+{% block side %}
+{{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-hover ">
+                          <tr class="bg-dark text-white">
+                              <th>Product Image</th>
+                              <th>Product Name</th>
+                              <th>product Price</th>
+                              <th>Action</th>
+
+                          </tr>
+
+                         {% for x in painting %}
+                          <tr>
+                              <td><img src="{{ x.panting_img.url }}" alt="" height="100" width="100"></td>
+                              <td>{{ x.panting_title }}</td>
+                              <td>{{ x.panting_rate }}</td>
+                              <td>
+                                  <a href="{% url 'delete_product' x.pro_id %}" class="btn btn-danger btn-sm">Delete</a>
+                                  <a href="{% url 'edit_panting' x.pro_id %}" class="btn btn-primary  btn-sm ml-2">Edit</a>
+
+                              </td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+{% endblock %}

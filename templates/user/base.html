@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Gallery </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #006266">
+    <a href="" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'user_profile' %}" class="nav-link ml-3">Home</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'user_profile' %}" class="nav-link ml-3">profile</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'product' %}" class="nav-link ml-3">product</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'my_order' %}" class="nav-link ml-3">my Order</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'logout' %}" class="btn btn-sm btn-danger ml-3">Logout</a>
+        </li>
+    </ul>
+</nav>
+
+{% block content %}  {% endblock %}
+
+</body>
+</html>

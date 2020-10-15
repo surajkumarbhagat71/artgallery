@@ -1,0 +1,39 @@
+{% extends 'user/base.html' %}
+
+
+{% block content %}
+
+    <div class="container mt-4">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                      <table class="table table-borderless">
+                          <tr class="bg-secondary text-white">
+                              <th>Product Image</th>
+                              <th>Product Name</th>
+                              <th>Product Price</th>
+                              <th>Order Date </th>
+                              <th> Action </th>
+                          </tr>
+
+                         {% for x in my_order %}
+                          <tr>
+                              <td><img src="{{ x.pro_id.panting_img.url }}" alt="" height="75" width="75" style="border-radius: 100px;box-shadow:4px 4px 3px 0px rgba(0,0,0,0.75)"></td>
+                              <td><small>{{ x.pro_id.panting_title }}</small></td>
+                              <td><i class="fas fa-rupee-sign fa-xs text-muted"></i> <small>{{ x.pro_id.panting_rate }}</small></td>
+                              <td><small>{{ x.order_time }}</small></td>
+                              <td>
+                                  <a href="{% url 'delete_order' x.order_id %}" class="btn btn-sm btn-danger shadow-none" data-toggle="tooltip" title="cancle"><i class="fas fa-times pl-2 pr-2"></i></a>
+                              </td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'oner/base.html' %}
+
+{% block side %}
+{{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+     <div class="row">
+         <div class="col-lg-4">
+             <div class="card">
+                 <div class="card-header text-center text-white" style="background-color: #009432"><b>All Product</b></div>
+                 <div class="card-body text-center"><b>{{ product }}</b></div>
+
+             </div>
+         </div>
+
+        <div class="col-lg-4">
+             <div class="card">
+                 <div class="card-header text-center text-white"  style="background-color: #009432"><b>All Order</b></div>
+                 <div class="card-body text-center"><b>{{ order }}</b></div>
+             </div>
+         </div>
+
+        <div class="col-lg-4">
+             <div class="card">
+                 <div class="card-header text-center text-white" style="background-color: #009432" ><b>All User</b></div>
+                 <div class="card-body text-center"><b>{{ user }}</b></div>
+             </div>
+         </div>
+     </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Gallery </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body class="bg-light">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#006266">
+    <a href="{% url 'home' %}" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'home' %}" class="nav-link ml-5">Home</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="{% url 'about' %}" class="nav-link ml-3">About Us</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'p_product' %}" class="nav-link ml-3">product</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'signup' %}" class="nav-link ml-3">Register</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'user_login' %}" class="nav-link ml-3 mr-2">Login</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="" class="nav-link ml-3">Contact Us</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+
+<div class="container mt-4 text-center">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <img src="{% static 'about.jpeg' %}" style="width: 100%; height:55vh;">
+                    <br><br>
+                    <hr style="border: 3px dotted grey;border-radius: 100px;">
+                    <small class="text-muted">
+                        <span style="font-size: 17px;font-weight:bold">The</span> main purpose of this project Online Art Gallery is to sell  art onine by intemet.
+                        This project intends different types of forms with many types of art varities sellto user to buy online .
+                        This project is the simple shopping solution for customer to buy art picture easliy by online This project Online Art Gallery can manage
+                        the information of art painting and customer details. This project is used to develop the art selling site .It is new trend to buy art though
+                        online This project provides a lot of features to manage on very well manner . This project contains a lot of advance modules which makes the bck end system
+                        very powerful in current system we have integrated a single payment system Cash on delivery but in future we will enhance it with online payment system.
+                    </small>
+                    <br><br>
+                    <hr style="border: 3px dotted grey;border-radius: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

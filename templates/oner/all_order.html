@@ -1,0 +1,46 @@
+{% extends 'oner/base.html' %}
+
+{% block side %}
+{{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class="row">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-hover ">
+                          <tr class="bg-dark text-white">
+                              <th>Product Image</th>
+                              <th>Product Name</th>
+                              <th>product Price</th>
+                              <th>order data</th>
+                              <th>user name</th>
+                              <th>user email</th>
+                              <th>user contact</th>
+                              <th>user address</th>
+                          </tr>
+
+                         {% for x in order %}
+                          <tr>
+                              <td><img src="{{ x.pro_id.panting_img.url }}" alt="" height="100" width="100"></td>
+                              <td>{{ x.pro_id.panting_title }}</td>
+                              <td>{{ x.pro_id.panting_rate }}</td>
+                              <td>{{ x.order_time }}</td>
+                              <td>{{ x.user_id.first_name }}</td>
+                              <td>{{ x.user_id.email }}</td>
+                              <td>{{ x.user_id.contact }}</td>
+                              <td>{{ x.user_id.address }}</td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+      </div>
+    </div>
+
+
+{% endblock %}

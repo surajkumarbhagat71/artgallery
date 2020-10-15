@@ -1,0 +1,32 @@
+{% extends 'user/base.html' %}
+
+
+{% block content %}
+
+
+    <div class="container mt-4 tex-center">
+      <div class="row">
+          {% for x in product %}
+          <div class="col-lg-3 mt-4">
+              <div class="card border-0 shadow-sm ">
+                  <div class="card-body text-center">
+                      <div class="text-center">
+                          <img src="{{ x.panting_img.url }}" style="height: 20vh; width: 200px;">
+                      </div>
+                      <hr style="border-color: white;">
+                      <small class="text-muted text-center"><span><b>Title: </b></span> {{ x.panting_title }}</small>
+                      <br>
+                      <small class="text-muted text-center"><span><b>Painting by: </b></span> {{ x.panting_by }}</small>
+                      <br>
+                      <small class="text-muted text-center"><span><b>Price: </b></span> {{ x.panting_rate }}</small>
+                      <br><br>
+                      <a href="{% url 'order' x.pro_id %}" class="btn btn-sm btn-block btn-info shadow-none">Buy Now</a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+</div>
+
+{% endblock %}
+

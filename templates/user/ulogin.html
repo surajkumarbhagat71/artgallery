@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#006266">
+    <a href="{% url 'home' %}" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'home' %}" class="nav-link ml-3">Home</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="{% url 'about' %}" class="nav-link ml-3">About Us</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'p_product' %}" class="nav-link ml-3">product</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'signup' %}" class="nav-link ml-3">Register</a>
+        </li>
+
+
+
+        <li class="nva-item">
+            <a href="{% url 'user_login' %}" class="nav-link ml-3 mr-2">Login</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="" class="nav-link ml-3">Contact Us</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+
+<div class="container mt-4">
+     <div class="row">
+         <div class="col-lg-5 mx-auto">
+             <div class="card">
+                 <div class="card-header text-center text-white" style="background-color:#eb4d4b" ><b>User  Login</b></div>
+                 <div class="card-body">
+                     <form action="{% url 'user_login' %}" method="post">
+                         {% csrf_token %}
+
+                         <div class="form-group">
+                             <label>UserName</label>
+                             <input type="text" name="username" class="form-control" placeholder="username">
+                         </div>
+
+                         <div class="form-group">
+                             <label>Password</label>
+                             <input type="password" name="password" class="form-control" placeholder="Password">
+                         </div>
+
+                         <div class="form-group">
+                             <input type="submit" class="btn btn-primary btn-block">
+                         </div>
+                     </form>
+                     <a href="{% url 'signup' %}" class="btn btn-block btn-success">User Signup</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+
+
+</body>
+</html>

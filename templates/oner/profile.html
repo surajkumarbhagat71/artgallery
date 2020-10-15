@@ -1,0 +1,53 @@
+{% extends 'oner/base.html' %}
+
+{% block side %}
+{{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+     <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-5 ">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <img src="{{ profile.img.url }}" alt="" width="200" height="250">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6  mt-5">
+                                 <table class="table table-borderless mt-2">
+                                     <tr>
+                                         <td><b><i class="fas fa-user"></i>&nbsp; Name : {{ profile.first_name }}  {{ profile.last_name }} </b></td>
+                                         <td></td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b><i class="fas fa-envelope"></i>&nbsp; Email Id : {{ profile.email }}</b></td>
+                                         <td></td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b> <i class="fa fa-address-card">&nbsp;</i> &nbsp; Contact : {{ profile.contact }} </b></td>
+                                         <td></td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b><i class="fas fa-address-card"></i>&nbsp;&nbsp;   Address : {{ profile.address }}</b></td>
+                                         <td></td>
+                                     </tr>
+                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+{% endblock %}

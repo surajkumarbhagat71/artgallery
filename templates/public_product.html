@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#006266">
+    <a href="{% url 'home' %}" class="navbar-brand ml-5"><b>Online Art Gallery</b></a>
+
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nva-item">
+            <a href="{% url 'home' %}" class="nav-link ml-5">Home</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="{% url 'about' %}" class="nav-link ml-3">About Us</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'p_product' %}" class="nav-link ml-3">product</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'signup' %}" class="nav-link ml-3">Register</a>
+        </li>
+
+
+        <li class="nva-item">
+            <a href="{% url 'user_login' %}" class="nav-link ml-3 mr-2">Login</a>
+        </li>
+
+        <li class="nva-item">
+            <a href="" class="nav-link ml-3">Contact Us</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+<div class="container mt-4 tex-center">
+      <div class="row">
+          {% for x in p_product %}
+          <div class="col-lg-3 mt-4">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center">
+                      <div class="text-center">
+                          <img src="{{ x.panting_img.url }}" style="height: 20vh; width: 200px;">
+                      </div>
+                      <hr style="border-color: white;">
+                      <small class="text-muted text-center"><span><b>Title: </b></span> {{ x.panting_title }}</small>
+                      <br>
+                      <small class="text-muted text-center"><span><b>Painting by: </b></span> {{ x.panting_by }}</small>
+                      <br>
+                      <small class="text-muted text-center"><span><b>Price: </b></span> {{ x.panting_rate }}</small>
+                      <br><br>
+                      <a href="{% url 'order' x.pro_id %}" class="btn btn-sm btn-block btn-info shadow-none">Buy Now</a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+</div>
+
+</body>
+</html>
